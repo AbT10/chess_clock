@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>Image Test</title>
+<link rel="stylesheet" href="c_style.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+<div id="c_time" class="invi">
+<label>Player 1 time (in minutes)</label>
+<input type="text" id="p1_time" class="inp" />
+<label>Player 2 time (in minutes)</label>
+<input type="text" id="p2_time" class="inp" />
+<button id="submit"><i class="material-icons">add</i></button>
+</div>
+<div id="container">
+<div class="choice" id="five" onclick="set_times(this)">5 Mins.</div>
+<div class="choice" id="ten" onclick="set_times(this)">10 Mins.</div>
+<div class="choice" id="fif" onclick="set_times(this)">15 Mins.</div>
+</div>
+<div id="othrs">
+<button id="add_time"><i class="material-icons">add</i></button>
+<button id="play"><i class="material-icons">play_arrow</i></button>
+</div>
+<script src="scr2.js"></script>
+</body>
+</html>
