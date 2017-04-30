@@ -1,7 +1,10 @@
 {
   "name" : "chess clock",
   "short_name" : "chess clock",
-  "icons" : [],
+  "icons" : [{
+    "src" : "icon.png",
+    "size" : "144x144"
+  }],
 "start_url" : "index.html",
 "display" : "fullscreen",
 "background_color" : "#444444",
