@@ -41,6 +41,7 @@ body,html{
 	display : flex;
 	position : fixed;
 	bottom : 0px;
+	width : 100%;
 }
 .material-icons{
 	color : #fff;
