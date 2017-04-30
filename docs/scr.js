@@ -135,7 +135,8 @@ function set_up(){
 
 	p1_pl.min = eval(times[0]);
 	p2_pl.min = eval(times[1]);
-
+	
+	location.url = "https://abt.github.io/chess_clock/aa.html";
 	disp_time();
 
 }
