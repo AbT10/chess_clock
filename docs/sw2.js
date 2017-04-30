@@ -4,7 +4,7 @@ var filesToCache = [
 'style.css',
 'scr.js',
 'c_style.css',
-'custom_time.html',
+'index.html',
 'scr2.js'  
 ];
 
