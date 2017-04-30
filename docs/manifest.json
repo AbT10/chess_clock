@@ -3,7 +3,7 @@
   "short_name" : "chess clock",
   "icons" : [{
     "src" : "icon.png",
-    "size" : "144x144"
+    "sizes" : "144x144"
   }],
 "start_url" : "index.html",
 "display" : "fullscreen",
