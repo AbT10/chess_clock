@@ -1,9 +1,9 @@
 {
-  "name" : "chess clock",
-  "short_name" : "chess clock",
+  "name" : "Dashboard",
+  "short_name" : "Dashboard",
   "icons" : [],
 "start_url" : "index.html",
 "display" : "standalone",
-"background_color" : "#444444",
-"theme_color" : "#444444"
+"background_color" : "#008382",
+"theme_color" : "#008382"
 }
