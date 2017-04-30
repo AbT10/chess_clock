@@ -26,22 +26,11 @@ body,html{
 	font-size : 3em;
 	text-align: center;
 	padding : 200px;
-}
-#five{
-	background : #ff3622;
-	color : white;
-}
-#ten{
-	background : #ffc300;
-	color : white;
-}
-#fif{
-	background : #00ffc3;
-	color : white;
+	color : grey;
 }
 #add_time{
 	flex : 1;
-	background : #008382;
+	background : #229eff;
 	text-align : center;
 	padding : 20px;
 	width : 100%;
@@ -66,7 +55,7 @@ i{
 	padding : 20px;
 	width : 100%;
 	border : none;
-	background : #f32f19;
+	background : #22ff65;
 }
 
 
@@ -105,7 +94,7 @@ label{
 	border : none;
 	width : 100%;
 	margin-top : 10px;
-	padding : 10px;
+	padding : 30px;
 }
 
 
