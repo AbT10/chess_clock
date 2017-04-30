@@ -39,6 +39,8 @@ body,html{
 
 #othrs{
 	display : flex;
+	position : fixed;
+	bottom : 0px;
 }
 .material-icons{
 	color : #fff;
