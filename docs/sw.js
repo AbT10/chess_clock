@@ -1,4 +1,4 @@
-var version = 'v1';
+var version = 'v2';
 var c_name = 'cache_' + version;
 var files = [
 'aa.html',

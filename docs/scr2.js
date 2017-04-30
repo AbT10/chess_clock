@@ -10,7 +10,7 @@ var p1 = 0,p2 = 0;
 window.onload = ()=>{
 	if(navigator.serviceWorker){
 		console.log("Registering Service Worker!");
-		navigator.serviceWorker.register('sw.js')
+		navigator.serviceWorker.register('sw2.js')
 		.then((reg)=>{
 			console.log("Successfully Registered Service Worker!" + reg);
 		})
