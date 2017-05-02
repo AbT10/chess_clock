@@ -29,22 +29,85 @@ body,html{
 	color : #fff;
 }
 
-#rotate_clock{
+.btn{
 	background : none;
 	border : none;
-	position : absolute;
-	top : 0px;
-	left : 0px;
 	z-index : 9;
 }
 
-#rotate_clock i{
+#rotate_clock{
+	position : absolute;
+	top : 0px;
+	left : 0px;
+}
+
+.btn i{
 	font-size : 4em;
 	color : white;
+}
+
+#adj_time{
+	position : absolute;
+	top : 0px;
+	right : 0px;
 }
 #clock_p2{
 	background : #fff;
 	color : #000;
+}
+
+.invi{
+	display : none;
+}
+
+.flexy{
+	display : flex;
+	flex-direction: column;=
+}
+
+#Add_times{
+	background : white;
+	width : 60%;
+	height:  100%;
+	position : absolute;
+	top : 0px;
+	right : 0px;
+	box-shadow: 2px 2px 2px #ddd;
+	z-index: 99;
+}
+.time{
+	padding : 20px;
+	flex : 1;
+	color : grey;
+	font-family : consolas;
+	text-align : center;
+	box-shadow: 0px 1px 2px #ddd;
+}
+#add_time{
+	background: #3dd829;
+	border : none;
+	padding : 20px;
+}
+#add_time i{
+	color : white;
+	font-size : 2em;
+	font-weight : bold;
+}
+#close_menu{
+	background: none;
+	border : none;
+	z-index : 199;
+	width : 20%;
+	position: absolute;
+	top : 0px;
+	right : 0px;
+}
+#close_menu i{
+	color : #3dd829;
+	padding : 20px;
+	border-radius: 200px;
+	font-weight: bold;
+	box-shadow: 1px 1px 1px #ddd;
 }
 
 .timerss{
@@ -52,4 +115,59 @@ body,html{
 	margin : auto;
 	text-align : center;
 	padding : 0px;
+}
+
+#form{
+	width : 100%;
+	height : 50%;
+	position : relative;
+	bottom : 0px;
+	display : none;
+	background : #dedfed;
+	flex-direction: column;
+}
+
+.ip{
+	flex : 1;
+	width : 100%;
+	font-family: consolas;
+	font-size:28px;
+	margin : 20px 0px 20px 0px;
+	color : grey;
+	padding-left : 10px;
+}
+
+#abort{
+	border: none;
+	background : #d23;
+	width : 20%;
+	text-align: center;
+	padding : 10px;
+}
+#abort i{
+	color: white;
+	font-weight: bold;
+}
+
+#submit_time{
+	background: #32d;
+	border: none;
+	width : 100%;
+	padding : 20px;
+	text-align: center;
+}
+#submit_time i{
+	color: white;
+	font-weight: bold;
+}
+@media (max-device-width : 500px){
+	#Add_times{
+		width : 100%;
+	}
+	.btn i{
+		font-size: 4em;
+	}
+	.timer{
+		padding : 20px;
+	}
 }

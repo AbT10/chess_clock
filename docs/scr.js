@@ -65,8 +65,59 @@
 // })();
 
 /* Game Play */
+
+window.onload = ()=>{
+	if(navigator.serviceWorker){
+		console.log("Registering Service Worker!");
+		navigator.serviceWorker.register('sw2.js')
+		.then((reg)=>{
+			console.log("Successfully Registered Service Worker!" + reg);
+		})
+		.catch((err)=>{
+			console.log("An Error Occured while registering service worker.");
+		});
+}
+}
+
+var times = document.getElementsByClassName("choice");
+
 var d1 = document.getElementById("clock_p1");
 var d2 = document.getElementById("clock_p2");
+
+var ad_tm = document.getElementById("adj_time");
+var add = document.getElementById("add_time");
+var menu = document.getElementById("Add_times");
+var close = document.getElementById("close_menu");
+var times = document.getElementsByClassName("time");
+var form = document.getElementById("form");
+var abort = document.getElementById("abort");
+var submit = document.getElementById("submit_time");
+
+submit.addEventListener("click",()=>{
+	var p1 = document.getElementById("p1").value;
+	var p2 = document.getElementById("p2").value;
+	p1_pl.min = eval(p1);
+	p2_pl.min = eval(p2);
+	form.style.display = "none";
+	menu.className="invi";
+	disp_time();
+})
+
+abort.addEventListener("click",()=>{
+	form.style.display = "none";
+})
+
+add.addEventListener("click",()=>{
+	form.style.display ="flex";
+})
+
+ad_tm.addEventListener("click",()=>{
+	menu.className = "flexy";
+});
+
+close.addEventListener("click",()=>{
+	menu.className = "invi";
+})
 
 var p1_pl = {
 	min : 0,
@@ -112,33 +163,50 @@ function update(time){
 	}
 	else{
 		console.log("Timer expired!!!");
-	}
+		clearInterval(timer);
+		}
 	disp_time();
 }
 
 
 function disp_time(){
-	console.log(p1_pl.min + " " + p1_pl.sec);
-	console.log(p2_pl.min + " " + p2_pl.sec);
-	p1_pl.min_hol.innerHTML = p1_pl.min;
-	p1_pl.sec_hol.innerHTML = p1_pl.sec;
-	p2_pl.min_hol.innerHTML = p2_pl.min;
-	p2_pl.sec_hol.innerHTML = p2_pl.sec; 
+	if(p1_pl.min>9){
+		p1_pl.min_hol.innerHTML = p1_pl.min;
+	}
+	else{
+		p1_pl.min_hol.innerHTML = "0"+p1_pl.min;
+	}
+	if(p2_pl.min>9){
+		p2_pl.min_hol.innerHTML = p2_pl.min;
+	}
+	else{
+		p2_pl.min_hol.innerHTML = "0"+p2_pl.min;
+	}
+	if(p1_pl.sec>9){
+		p1_pl.sec_hol.innerHTML = p1_pl.sec;
+	}
+	else{
+		p1_pl.sec_hol.innerHTML = "0"+p1_pl.sec;
+	}
+	if(p2_pl.sec>9){
+		p2_pl.sec_hol.innerHTML = p2_pl.sec;
+	}
+	else{
+		p2_pl.sec_hol.innerHTML = "0"+p2_pl.sec;
+	} 
 }
 
-function set_up(){
-	var url = location.href;
-
-	var start_i = url.indexOf('?') + 1;
-	var en = url.length + 1;
-	var times = url.slice(start_i,en-1).split('&');
-
-	p1_pl.min = eval(times[0]);
-	p2_pl.min = eval(times[1]);
-	
-	location.url = "https://abt.github.io/chess_clock/aa.html";
-	disp_time();
-
+function set_timer(ch){
+	for(var i=0; i<times.length; i++){
+		if(ch === times[i]){
+			p1_pl.min = p2_pl.min = (i+1)*5;
+			p1_pl.sec = p2_pl.sec = 0;
+			clearInterval(timer);
+			disp_time();
+			menu.className = "invi";
+		}
+		else{
+			times[i].style.border = "none";
+		}
+	}
 }
-
-window.onload = set_up;

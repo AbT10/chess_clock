@@ -1,11 +1,8 @@
 var cacheName = 'chess_clock_v2';
 var filesToCache = [
-'aa.html',
 'style.css',
 'scr.js',
-'c_style.css',
-'index.html',
-'scr2.js'  
+'index.html',  
 ];
 
 self.addEventListener('install', function(e) {
