@@ -15,10 +15,13 @@
 <body>
 
 <button id="rotate_clock" class="btn"><i class="material-icons">rotate_90_degrees_ccw</i></button>
- <div id="clock_p1" class="timer"><p id="p1_min" class="timerss">00<p class="timerss">:</p><p id="p1_sec" class="timerss">00</p>
- </div>
+ <button id="clock_p1" class="timer"><p id="p1_min" class="timerss">00<p class="timerss">:</p><p id="p1_sec" class="timerss">00</p>
+ </button>
+ <button id="pomodoro" class="btn"><i class='material-icons'>timer</i></button>
  <button id="adj_time" class="btn"><i class="material-icons">alarm_add</i></button>
- <div id="clock_p2" class="timer"><p id="p2_min" class="timerss">00<p class="timerss">:</p><p id="p2_sec" class="timerss">00</p></div>
+ <button id="clock_p2" class="timer"><p id="p2_min" class="timerss">00<p class="timerss">:</p><p id="p2_sec" class="timerss">00</p>
+ </button>
+ <button id="reset" class="btn"><i class="material-icons">refresh</i></button>
 
  <div id="Add_times" class="invi">
  	<button id="close_menu"><i class="material-icons">close</i></button>
@@ -28,11 +31,14 @@
  	<button id="add_time"><i class="material-icons">add</i></button>
  	<div id="form">
  	<button id="abort"><i class="material-icons">close</i></button>
- 	<input type="text" class="ip" id="p1" placeholder="Player 1 time(in Mins.)" />
- 	<input type="text" class="ip" id="p2" placeholder="Player 2 time(in Mins.)" />
+ 	<input type="text" class="ip" id="p1" placeholder="T1(in Mins)" />
+ 	<input type="text" class="ip" id="p2" placeholder="T2(in Mins)" />
  	<button id="submit_time"><i class="material-icons">play_arrow</i></button>
  	</div>
  </div>
+
+ <!-- Create a div for pomodoro timer -->
+
 <script src="scr.js"></script>
 </body>
 </html>

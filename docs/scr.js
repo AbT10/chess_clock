@@ -1,70 +1,4 @@
-
-/* Image recognition */
-
-// var img = document.getElementById("img2");
-
-// var canvas = document.getElementById("canv");
-// var canv = canvas.getContext("2d");
-
-// canv.drawImage(img,0,0);
-
-// var img_dat = canv.getImageData(0,0,28,28);
-
-// console.log(img_dat);
-
-// var dat = new Vector([4,784]);
-// dat.arrange(img_dat.data);
-
-// var fill_arr = [];
-
-// for(var i = 0; i<784; i++){
-// 	for(var j=0; j<4; j++){
-//      		fill_arr.push(dat.array[j][i]);
-// 	}
-// }
-
-// var img_vect = new Vector([784,4]);
-// img_vect.arrange(fill_arr);
-// console.log(img_vect);
-
-
-/* text completion */
-
-// var tag_name = "";
-// var tag_open = false;
-// (()=>{
-// 	var txt = document.getElementById("text");
-// 	txt.onkeypress = (e)=>{
-// 		console.log("Key Pressed : " + e.key);
-// 		if(e.keyCode === 60 && tag_open == false){
-// 			tag_open = true;
-// 			console.log("Tag is open");
-// 			return;
-// 		}
-
-// 		if(tag_open == true){
-// 			if(e.keyCode === 62){
-// 				console.log("Tag initiation is closed");
-// 				return;
-// 			}
-// 			else{
-// 				tag_name += e.key;
-// 			}
-// 		}
-
-// 		else if(tag_open === false){
-// 			if(e.keyCode === 60){
-// 				console.log("Tag close initiated");
-// 				txt.value = (txt.value + `/${tag_name}>`);
-// 				tag_open = false;
-// 				tag_name = "";
-// 			}
-// 		}
-
-// 	}
-// })();
-
-/* Game Play */
+// Service worker registration
 
 window.onload = ()=>{
 	if(navigator.serviceWorker){
@@ -79,6 +13,8 @@ window.onload = ()=>{
 }
 }
 
+// Getting DOM Elements 
+
 var times = document.getElementsByClassName("choice");
 
 var d1 = document.getElementById("clock_p1");
@@ -92,15 +28,26 @@ var times = document.getElementsByClassName("time");
 var form = document.getElementById("form");
 var abort = document.getElementById("abort");
 var submit = document.getElementById("submit_time");
+var reset  = document.getElementById("reset");
+
+//Handling button clicks
 
 submit.addEventListener("click",()=>{
 	var p1 = document.getElementById("p1").value;
 	var p2 = document.getElementById("p2").value;
-	p1_pl.min = eval(p1);
-	p2_pl.min = eval(p2);
-	form.style.display = "none";
-	menu.className="invi";
-	disp_time();
+	if(eval(p1)&&eval(p2)){
+		p1_pl.min = eval(p1);
+		p2_pl.min = eval(p2);
+		form.style.display = "none";
+		menu.className="invi";
+		disp_time();
+	}
+	else{
+		var ips = document.getElementsByClassName('ip');
+		ips.forEach(i=>{
+			i.value = '';
+		});
+	}
 })
 
 abort.addEventListener("click",()=>{
@@ -118,6 +65,10 @@ ad_tm.addEventListener("click",()=>{
 close.addEventListener("click",()=>{
 	menu.className = "invi";
 })
+
+reset.addEventListener("click",reset_timers);
+
+// Player Definitions
 
 var p1_pl = {
 	min : 0,
@@ -137,10 +88,13 @@ var p2_pl = {
 var timer;
 
 var rot_btn = document.getElementById("rotate_clock");
-rot_btn.onclick = toggle;
+rot_btn.addEventListener('click',toggle);
 
 function toggle(){
-	d1.style.transform = "rotate(180deg)";
+	if(d1.classList.contains('rotated')){
+		d1.classList.remove('rotated');
+	}
+	else d1.classList.add('rotated');
 }
 
 d1.addEventListener("click",()=>{start_timer(p2_pl)});
@@ -209,4 +163,10 @@ function set_timer(ch){
 			times[i].style.border = "none";
 		}
 	}
+}
+
+
+function reset_timers (){
+	p1_pl.min = p1_pl.sec = p2_pl.min = p2_pl.sec = 0;
+	disp_time();
 }
