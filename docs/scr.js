@@ -119,35 +119,35 @@ function update(time){
 		console.log("Timer expired!!!");
 		clearInterval(timer);
 		}
-	disp_time();
+	disp_time(time);
 }
 
 
-function disp_time(){
-	if(p1_pl.min>9){
-		p1_pl.min_hol.innerHTML = p1_pl.min;
+function disp_time(player){
+	if(player.min>9){
+		player.min_hol.innerHTML = player.min;
 	}
 	else{
-		p1_pl.min_hol.innerHTML = "0"+p1_pl.min;
+		player.min_hol.innerHTML = "0"+player.min;
 	}
-	if(p2_pl.min>9){
-		p2_pl.min_hol.innerHTML = p2_pl.min;
-	}
-	else{
-		p2_pl.min_hol.innerHTML = "0"+p2_pl.min;
-	}
-	if(p1_pl.sec>9){
-		p1_pl.sec_hol.innerHTML = p1_pl.sec;
-	}
-	else{
-		p1_pl.sec_hol.innerHTML = "0"+p1_pl.sec;
-	}
-	if(p2_pl.sec>9){
-		p2_pl.sec_hol.innerHTML = p2_pl.sec;
+	// if(p2_pl.min>9){
+	// 	p2_pl.min_hol.innerHTML = p2_pl.min;
+	// }
+	// else{
+	// 	p2_pl.min_hol.innerHTML = "0"+p2_pl.min;
+	// }
+	if(player.sec>9){
+		player.sec_hol.innerHTML = player.sec;
 	}
 	else{
-		p2_pl.sec_hol.innerHTML = "0"+p2_pl.sec;
-	} 
+		player.sec_hol.innerHTML = "0"+player.sec;
+	}
+	// if(p2_pl.sec>9){
+	// 	p2_pl.sec_hol.innerHTML = p2_pl.sec;
+	// }
+	// else{
+	// 	p2_pl.sec_hol.innerHTML = "0"+p2_pl.sec;
+	// } 
 }
 
 function set_timer(ch){
@@ -156,7 +156,8 @@ function set_timer(ch){
 			p1_pl.min = p2_pl.min = (i+1)*5;
 			p1_pl.sec = p2_pl.sec = 0;
 			clearInterval(timer);
-			disp_time();
+			disp_time(p1_pl);
+			disp_time(p2_pl);
 			menu.className = "invi";
 		}
 		else{
@@ -168,5 +169,6 @@ function set_timer(ch){
 
 function reset_timers (){
 	p1_pl.min = p1_pl.sec = p2_pl.min = p2_pl.sec = 0;
-	disp_time();
+	disp_time(p1_pl);
+	disp_time(p2_pl);
 }
