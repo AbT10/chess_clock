@@ -40,7 +40,8 @@ submit.addEventListener("click",()=>{
 		p2_pl.min = eval(p2);
 		form.style.display = "none";
 		menu.className="invi";
-		disp_time();
+		disp_time(p1_pl);
+		disp_time(p2_pl);
 	}
 	else{
 		var ips = document.getElementsByClassName('ip');
